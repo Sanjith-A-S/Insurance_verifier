@@ -61,8 +61,7 @@ router.get('/diagnostics', async (req, res, next) => {
 
 router.post('/reset', async (req, res, next) => {
   try {
-    // Dynamically import seed loader
-    const { seedDatabase } = await import('../../seed/loader.js');
+    const { seedDatabase } = await import('../../../seed/loader.js');
     const result = await seedDatabase();
     res.status(200).json({
       ok: true,

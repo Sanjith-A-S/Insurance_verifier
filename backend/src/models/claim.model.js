@@ -107,6 +107,12 @@ const claimSchema = new mongoose.Schema(
 claimSchema.index({ claimantId: 1, updatedAt: -1 });
 claimSchema.index({ status: 1, updatedAt: -1 });
 claimSchema.index({ assigneeId: 1, status: 1 });
-claimSchema.index({ claimantId: 1, idempotencyKey: 1 }, { unique: true, sparse: true });
+claimSchema.index(
+  { claimantId: 1, idempotencyKey: 1 },
+  {
+    unique: true,
+    partialFilterExpression: { idempotencyKey: { $type: 'string' } },
+  }
+);
 
 export const Claim = mongoose.model('Claim', claimSchema);

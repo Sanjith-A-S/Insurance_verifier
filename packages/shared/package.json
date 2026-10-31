@@ -1,0 +1,13 @@
+{
+  "name": "@claimlens/shared",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/types.ts",
+  "exports": {
+    "./types": "./src/types.ts",
+    "./schemas": "./src/schemas.ts"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  }
+}
