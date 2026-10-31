@@ -187,10 +187,11 @@ async function verifyAIFeatures() {
   if (initRes.status !== 'running') throw new Error('Async 202 initiate analysis failed');
 
   let pollAnalysis;
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 40; i++) {
     pollAnalysis = await Analysis.findOne({ claimId: claimDoc._id, version: initRes.version });
-    if (pollAnalysis && pollAnalysis.state === 'ready') break;
-    await new Promise((r) => setTimeout(r, 100));
+    const finalizeStage = pollAnalysis?.stages?.find((s) => s.name === 'finalize');
+    if (pollAnalysis && pollAnalysis.state === 'ready' && finalizeStage?.status === 'completed') break;
+    await new Promise((r) => setTimeout(r, 150));
   }
   if (!pollAnalysis || pollAnalysis.state !== 'ready') throw new Error('Analysis pipeline failed to reach ready state');
   console.log(`    [PASS] Analysis v${pollAnalysis.version} completed all stages: ${pollAnalysis.stages.map((s) => s.name).join(', ')}\n`);
@@ -206,6 +207,7 @@ async function runVerification() {
     console.log('  [ALL PASSED] Database & AI Engine Fully Verified & Healthy ');
     console.log('=============================================================\n');
 
+    await new Promise((r) => setTimeout(r, 600));
     await mongoose.disconnect();
     if (memoryServer) await memoryServer.stop();
     process.exit(0);
