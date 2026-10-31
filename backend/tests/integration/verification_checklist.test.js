@@ -224,7 +224,11 @@ describe('Phase 4 — Conformance Verification Checklist (10 Points)', () => {
     expect(runRes.status).toBe(202);
     expect(runRes.body.data.version).toBe(2);
 
-    await new Promise((r) => setTimeout(r, 200));
+    for (let i = 0; i < 25; i++) {
+      const chk = await request(app).get('/api/v1/claims/CL-2041/analysis/status').set('X-Demo-User-Id', 'usr_meera');
+      if (chk.body.data?.state === 'ready' && chk.body.data?.version === 2) break;
+      await new Promise((r) => setTimeout(r, 80));
+    }
 
     // Old version still readable via ?version=1
     const oldRes = await request(app).get('/api/v1/claims/CL-2041/analysis?version=1').set('X-Demo-User-Id', 'usr_meera');

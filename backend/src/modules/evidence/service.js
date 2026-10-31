@@ -279,7 +279,9 @@ export async function getThumbnail(actor, claimId, evidenceId) {
   }
 }
 
-export async function reviewEvidence(actor, claimId, evidenceId, { status, note }) {
+export async function reviewEvidence(actor, claimId, evidenceId, body = {}) {
+  const status = body.status || body.reviewStatus;
+  const note = body.note || body.reviewNote;
   assertRole(actor, 'verifier');
   const claim = await loadClaimForActor(claimId, actor);
   assertWritable(claim);

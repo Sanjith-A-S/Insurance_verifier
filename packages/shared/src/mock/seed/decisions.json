@@ -1,0 +1,21 @@
+[
+  {
+    "id": "dec_2049_01",
+    "claimId": "CL-2049",
+    "decision": "recommend_approve",
+    "rationale": "All documentation verified. Windshield repair completed under standard cashless process at authorized garage.",
+    "recommendedAmount": 12500,
+    "actor": { "id": "usr_vikram", "name": "Vikram Shah" },
+    "at": "2026-10-15T10:00:00Z"
+  },
+  {
+    "id": "dec_2050_01",
+    "claimId": "CL-2050",
+    "decision": "recommend_approve",
+    "rationale": "Fire brigade report and surveyor inspection confirm total loss caused by electrical short circuit. IDV payout recommended minus salvage deduction.",
+    "recommendedAmount": 650000,
+    "actor": { "id": "usr_meera", "name": "Meera Iyer" },
+    "at": "2026-10-22T17:00:00Z"
+  }
+]
+

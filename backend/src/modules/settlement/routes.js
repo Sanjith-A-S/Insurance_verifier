@@ -8,6 +8,7 @@ router.use(resolveIdentity);
 
 const verifierOnly = requireRole('verifier');
 
+router.get('/settlement', verifierOnly, controller.recalculate);
 router.post('/settlement/recalculate', verifierOnly, controller.recalculate);
 router.post('/settlement/override', verifierOnly, controller.override);
 

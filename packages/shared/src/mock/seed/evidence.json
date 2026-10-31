@@ -1,0 +1,132 @@
+[
+  {
+    "id": "EV-CL-2041-01",
+    "claimId": "CL-2041",
+    "checklistItemId": "policy_schedule",
+    "category": "insurance_documents",
+    "fileName": "policy_schedule.pdf",
+    "mimeType": "application/pdf",
+    "sizeBytes": 142380,
+    "sha256": "4b5d278292837380a91176e0ff83bc63a9e698bc213bbf3f3e0988523efbcba4",
+    "pageCount": 1,
+    "source": "uploaded_file",
+    "receivedAt": "2026-06-16T10:00:00Z",
+    "uploadedBy": { "id": "usr_aarav", "name": "Aarav Kumar", "role": "claimant" },
+    "processingStatus": "ready",
+    "reviewStatus": "reviewed",
+    "provenance": {
+      "statuses": ["metadata_present"],
+      "duplicateOfIds": [],
+      "similarToIds": [],
+      "metadata": { "present": true, "gpsPresent": false }
+    }
+  },
+  {
+    "id": "EV-CL-2041-02",
+    "claimId": "CL-2041",
+    "checklistItemId": "repair_estimate",
+    "category": "repair_estimate",
+    "fileName": "workshop_estimate.pdf",
+    "mimeType": "application/pdf",
+    "sizeBytes": 98450,
+    "sha256": "82a93b48f9801ec6a91176e0ff83bc63a9e698bc213bbf3f3e0988523ef89ca1",
+    "pageCount": 1,
+    "source": "uploaded_file",
+    "receivedAt": "2026-06-16T10:05:00Z",
+    "uploadedBy": { "id": "usr_aarav", "name": "Aarav Kumar", "role": "claimant" },
+    "processingStatus": "ready",
+    "reviewStatus": "reviewed",
+    "provenance": {
+      "statuses": ["metadata_present"],
+      "duplicateOfIds": [],
+      "similarToIds": [],
+      "metadata": { "present": true, "gpsPresent": false }
+    }
+  },
+  {
+    "id": "EV-CL-2041-03",
+    "claimId": "CL-2041",
+    "checklistItemId": "photo_front",
+    "category": "photos_video",
+    "fileName": "front_view.png",
+    "mimeType": "image/png",
+    "sizeBytes": 320140,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source": "uploaded_file",
+    "receivedAt": "2026-06-16T10:10:00Z",
+    "uploadedBy": { "id": "usr_aarav", "name": "Aarav Kumar", "role": "claimant" },
+    "processingStatus": "ready",
+    "reviewStatus": "reviewed",
+    "provenance": {
+      "statuses": ["metadata_present"],
+      "duplicateOfIds": [],
+      "similarToIds": [],
+      "metadata": { "present": true, "dateTaken": "2026-06-15T15:00:00Z", "cameraMake": "Samsung", "cameraModel": "Galaxy S23", "gpsPresent": false }
+    }
+  },
+  {
+    "id": "EV-CL-2042-01",
+    "claimId": "CL-2042",
+    "checklistItemId": "photo_damage",
+    "category": "photos_video",
+    "fileName": "rear_bumper_damage.jpg",
+    "mimeType": "image/jpeg",
+    "sizeBytes": 284100,
+    "sha256": "c4ca4238a0b923820dcc509a6f75849b28412891910283741829182390192831",
+    "source": "uploaded_file",
+    "receivedAt": "2026-10-15T08:30:00Z",
+    "uploadedBy": { "id": "usr_rohan", "name": "Rohan Das", "role": "claimant" },
+    "processingStatus": "ready",
+    "reviewStatus": "reviewed",
+    "provenance": {
+      "statuses": ["metadata_present", "metadata_anomaly_date"],
+      "duplicateOfIds": [],
+      "similarToIds": [],
+      "metadata": { "present": true, "dateTaken": "2026-10-02T11:20:00Z", "cameraMake": "Apple", "cameraModel": "iPhone 14", "gpsPresent": false }
+    }
+  },
+  {
+    "id": "EV-CL-2042-02",
+    "claimId": "CL-2042",
+    "checklistItemId": "repair_estimate",
+    "category": "repair_estimate",
+    "fileName": "garage_estimate.pdf",
+    "mimeType": "application/pdf",
+    "sizeBytes": 115200,
+    "sha256": "c81e728d9d4c2f636f067f89cc14862c12948192837192837192837192837192",
+    "pageCount": 1,
+    "source": "uploaded_file",
+    "receivedAt": "2026-10-15T08:35:00Z",
+    "uploadedBy": { "id": "usr_rohan", "name": "Rohan Das", "role": "claimant" },
+    "processingStatus": "ready",
+    "reviewStatus": "reviewed",
+    "provenance": {
+      "statuses": ["metadata_present"],
+      "duplicateOfIds": [],
+      "similarToIds": [],
+      "metadata": { "present": true, "gpsPresent": false }
+    }
+  },
+  {
+    "id": "EV-CL-2042-03",
+    "claimId": "CL-2042",
+    "checklistItemId": "photo_damage",
+    "category": "photos_video",
+    "fileName": "rear_bumper_duplicate.jpg",
+    "mimeType": "image/jpeg",
+    "sizeBytes": 284100,
+    "sha256": "c4ca4238a0b923820dcc509a6f75849b28412891910283741829182390192831",
+    "source": "uploaded_file",
+    "receivedAt": "2026-10-15T08:36:00Z",
+    "uploadedBy": { "id": "usr_rohan", "name": "Rohan Das", "role": "claimant" },
+    "processingStatus": "ready",
+    "reviewStatus": "pending",
+    "provenance": {
+      "statuses": ["duplicate_candidate"],
+      "duplicateOfIds": ["EV-CL-2042-01"],
+      "similarToIds": [],
+      "metadata": { "present": true, "gpsPresent": false }
+    }
+  }
+]
+

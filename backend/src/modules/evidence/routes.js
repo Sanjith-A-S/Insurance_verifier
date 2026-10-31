@@ -14,6 +14,7 @@ router.get('/evidence/:eid', controller.getEvidence);
 router.get('/evidence/:eid/file', controller.getFile);
 router.get('/evidence/:eid/thumbnail', controller.getThumbnail);
 router.post('/evidence/:eid/review', controller.reviewEvidence);
+router.patch('/evidence/:eid/review', controller.reviewEvidence);
 
 export default router;
 

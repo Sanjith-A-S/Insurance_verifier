@@ -130,7 +130,15 @@ export async function patchRequest(actor, claimId, requestId, body) {
     throw new NotFoundError('Evidence request not found');
   }
 
-  const action = body.action || 'update';
+  const action =
+    body.action ||
+    (body.status === 'sent'
+      ? 'send'
+      : body.status === 'resolved'
+      ? 'resolve'
+      : body.status === 'not_applicable'
+      ? 'mark_not_applicable'
+      : 'update');
 
   if (action === 'send') {
     if (reqDoc.status !== 'draft') {

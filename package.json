@@ -1,0 +1,25 @@
+{
+  "name": "claimlens-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:claimant": "npm run dev --workspace=apps/claimant",
+    "dev:verifier": "npm run dev --workspace=apps/verifier",
+    "dev": "concurrently \"npm run dev:claimant\" \"npm run dev:verifier\"",
+    "build:claimant": "npm run build --workspace=apps/claimant",
+    "build:verifier": "npm run build --workspace=apps/verifier",
+    "build": "npm run build:claimant && npm run build:verifier",
+    "typecheck": "tsc --noEmit --project apps/claimant/tsconfig.json && tsc --noEmit --project apps/verifier/tsconfig.json",
+    "lint": "eslint apps packages --ext .ts,.tsx",
+    "assets": "node scripts/generate-demo-assets.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.3"
+  }
+}
+

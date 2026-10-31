@@ -2,13 +2,35 @@
   "name": "@claimlens/shared",
   "version": "1.0.0",
   "type": "module",
-  "main": "src/types.ts",
   "exports": {
     "./types": "./src/types.ts",
-    "./schemas": "./src/schemas.ts"
+    "./schemas": "./src/schemas.ts",
+    "./constants": "./src/constants.ts",
+    "./api/transport": "./src/api/transport.ts",
+    "./api/endpoints": "./src/api/endpoints.ts",
+    "./api/envelope": "./src/api/envelope.ts",
+    "./api/httpTransport": "./src/api/httpTransport.ts",
+    "./api/client": "./src/api/client.ts",
+    "./mock/store": "./src/mock/store.ts",
+    "./mock/mockTransport": "./src/mock/mockTransport.ts",
+    "./styles/tokens.css": "./src/styles/tokens.css",
+    "./styles/base.css": "./src/styles/base.css",
+    "./utils/format": "./src/utils/format.ts",
+    "./utils/a11y": "./src/utils/a11y.ts",
+    "./utils/scallop": "./src/utils/scallop.ts",
+    "./hooks/useBreakpoint": "./src/hooks/useBreakpoint.ts",
+    "./hooks/useReducedMotion": "./src/hooks/useReducedMotion.ts",
+    "./hooks/useDemoIdentity": "./src/hooks/useDemoIdentity.ts",
+    "./hooks/queries": "./src/hooks/queries.ts",
+    "./ui": "./src/ui/index.ts"
   },
   "dependencies": {
+    "idb-keyval": "^6.2.1",
     "zod": "^3.24.1"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@tanstack/react-query": "^5.62.8"
   }
 }
-

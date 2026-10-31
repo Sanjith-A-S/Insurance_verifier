@@ -1,0 +1,73 @@
+[
+  {
+    "id": "photo_front",
+    "category": "photos_video",
+    "label": "Front View of Vehicle",
+    "requirement": "required",
+    "status": "received",
+    "acceptableExamples": ["Clear photo showing front bumper, grille and licence plate"],
+    "acceptedMimeTypes": ["image/jpeg", "image/png", "image/webp"],
+    "maxSizeMB": 15
+  },
+  {
+    "id": "photo_damage",
+    "category": "photos_video",
+    "label": "Damage Area Close-up",
+    "requirement": "required",
+    "status": "received",
+    "acceptableExamples": ["Close-up of dent, scratch or impact point"],
+    "acceptedMimeTypes": ["image/jpeg", "image/png", "image/webp"],
+    "maxSizeMB": 15
+  },
+  {
+    "id": "policy_schedule",
+    "category": "insurance_documents",
+    "label": "Motor Insurance Policy Schedule",
+    "requirement": "required",
+    "status": "reviewed",
+    "acceptableExamples": ["PDF or clear photo of current policy schedule showing IDV and validity"],
+    "acceptedMimeTypes": ["application/pdf", "image/jpeg", "image/png"],
+    "maxSizeMB": 15
+  },
+  {
+    "id": "repair_estimate",
+    "category": "repair_estimate",
+    "label": "Authorised Workshop Estimate",
+    "requirement": "required",
+    "status": "reviewed",
+    "acceptableExamples": ["Itemised quote with parts and labour breakdown from authorised garage"],
+    "acceptedMimeTypes": ["application/pdf", "image/jpeg", "image/png"],
+    "maxSizeMB": 15
+  },
+  {
+    "id": "driving_license",
+    "category": "vehicle_documents",
+    "label": "Driver's Driving Licence",
+    "requirement": "required",
+    "status": "received",
+    "acceptableExamples": ["Front and back of driver's valid licence"],
+    "acceptedMimeTypes": ["image/jpeg", "image/png", "application/pdf"],
+    "maxSizeMB": 15
+  },
+  {
+    "id": "rc_copy",
+    "category": "vehicle_documents",
+    "label": "Vehicle Registration Certificate (RC)",
+    "requirement": "required",
+    "status": "received",
+    "acceptableExamples": ["RC card or smart card copy showing engine and chassis numbers"],
+    "acceptedMimeTypes": ["application/pdf", "image/jpeg", "image/png"],
+    "maxSizeMB": 15
+  },
+  {
+    "id": "police_report",
+    "category": "police_documents",
+    "label": "Police FIR / GD Entry Copy",
+    "requirement": "conditionally_required",
+    "status": "received",
+    "acceptableExamples": ["First Information Report or General Diary entry copy with police station stamp"],
+    "acceptedMimeTypes": ["application/pdf", "image/jpeg", "image/png"],
+    "maxSizeMB": 15
+  }
+]
+

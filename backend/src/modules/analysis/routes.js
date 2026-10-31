@@ -14,6 +14,8 @@ router.get('/analysis/status', verifierOnly, controller.getStatus);
 router.get('/analysis/versions', verifierOnly, controller.getVersions);
 router.get('/analysis', verifierOnly, controller.getAnalysis);
 router.patch('/findings/:fid', verifierOnly, controller.updateFinding);
+router.patch('/analysis/findings/:fid', verifierOnly, controller.updateFinding);
 router.post('/matrix/annotations', verifierOnly, controller.annotateMatrix);
+router.post('/analysis/matrix/annotate', verifierOnly, controller.annotateMatrix);
 
 export default router;

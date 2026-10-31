@@ -24,6 +24,10 @@ router.patch('/:id/status', validate(patchStatusSchema), controller.patchStatus)
 // Checklist
 router.get('/:id/checklist', controller.getChecklist);
 router.patch('/:id/checklist/:itemId', validate(patchChecklistItemSchema), controller.patchChecklistItem);
+router.patch('/:id/checklist/:itemId/unavailable', (req, res, next) => {
+  req.body = { status: 'unavailable', reason: req.body?.reason || 'Document unavailable' };
+  controller.patchChecklistItem(req, res, next);
+});
 
 // Sub-routers mounted under /claims/:id
 import evidenceRouter from '../evidence/routes.js';

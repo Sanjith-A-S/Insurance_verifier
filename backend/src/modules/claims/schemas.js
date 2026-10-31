@@ -39,7 +39,7 @@ export const createClaimSchema = z.object({
 export const patchClaimSchema = createClaimSchema.partial();
 
 export const assignClaimSchema = z.object({
-  assigneeId: z.string().min(1, 'Assignee ID is required'),
+  assigneeId: z.string().optional(),
 });
 
 export const patchStatusSchema = z.object({

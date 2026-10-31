@@ -1,0 +1,43 @@
+[
+  {
+    "id": "req_2042_01",
+    "claimId": "CL-2042",
+    "title": "Clarification on Photo Date and Workshop Breakdown",
+    "reason": "The damage photos contain an EXIF timestamp of 2 Oct 2026, which precedes the declared incident date of 14 Oct. Additionally, the line items in the repair estimate total ₹162,300 whereas the invoice total states ₹165,200.",
+    "examples": [
+      "A brief explanation of the camera date setting or original photo file",
+      "An updated itemised repair bill with tax and parts breakdown from the workshop"
+    ],
+    "checklistItemId": "repair_estimate",
+    "findingId": "F-2042-01",
+    "status": "sent",
+    "dueDate": "2026-11-05T18:00:00Z",
+    "createdBy": { "id": "usr_meera", "name": "Meera Iyer" },
+    "sentAt": "2026-10-15T09:45:00Z",
+    "resolvedAt": null,
+    "notApplicableReason": null,
+    "responses": [],
+    "createdAt": "2026-10-15T09:40:00Z"
+  },
+  {
+    "id": "req_2043_01",
+    "claimId": "CL-2043",
+    "title": "Policy Document and Authorised Workshop Estimate",
+    "reason": "We require a copy of your motor policy schedule and an itemised repair estimate from an authorised workshop to verify coverage and calculate damages.",
+    "examples": [
+      "PDF of insurance policy schedule",
+      "Official estimate or job sheet from authorised service centre"
+    ],
+    "checklistItemId": "policy_schedule",
+    "findingId": null,
+    "status": "sent",
+    "dueDate": "2026-11-02T18:00:00Z",
+    "createdBy": { "id": "usr_vikram", "name": "Vikram Shah" },
+    "sentAt": "2026-10-21T11:20:00Z",
+    "resolvedAt": null,
+    "notApplicableReason": null,
+    "responses": [],
+    "createdAt": "2026-10-21T11:15:00Z"
+  }
+]
+

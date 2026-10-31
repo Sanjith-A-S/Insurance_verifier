@@ -1,0 +1,9 @@
+[
+  { "id": "usr_aarav",   "name": "Aarav Kumar",  "role": "claimant", "email": "aarav@demo.claimlens.in" },
+  { "id": "usr_rohan",   "name": "Rohan Das",    "role": "claimant", "email": "rohan@demo.claimlens.in" },
+  { "id": "usr_priya",   "name": "Priya Raman",  "role": "claimant", "email": "priya@demo.claimlens.in" },
+  { "id": "usr_karthik", "name": "Karthik S",    "role": "claimant", "email": "karthik@demo.claimlens.in" },
+  { "id": "usr_meera",   "name": "Meera Iyer",   "role": "verifier", "email": "meera@claimlens.in" },
+  { "id": "usr_vikram",  "name": "Vikram Shah",  "role": "verifier", "email": "vikram@claimlens.in" }
+]
+

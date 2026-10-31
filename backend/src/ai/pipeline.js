@@ -347,6 +347,8 @@ export async function executeAnalysisPipeline(claimId, version, actor) {
       ? 'All evidence documents verified and consistent with policy terms.'
       : `Analysis identified ${validatedFindings.length} review item(s) requiring investigator attention.`;
 
+  await updateStage(claimId, version, 'finalize', 'completed');
+
   await Analysis.findOneAndUpdate(
     { claimId, version },
     {
@@ -376,7 +378,6 @@ export async function executeAnalysisPipeline(claimId, version, actor) {
     metadata: { version, findingsCount: validatedFindings.length },
   });
 
-  await updateStage(claimId, version, 'finalize', 'completed');
   return { version, state: 'ready' };
 }
 

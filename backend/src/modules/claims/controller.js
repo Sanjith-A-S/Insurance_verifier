@@ -64,7 +64,8 @@ export async function submitClaim(req, res, next) {
 
 export async function assignClaim(req, res, next) {
   try {
-    const claim = await claimService.assignClaim(req.actor, req.params.id, req.body.assigneeId);
+    const targetAssigneeId = req.body?.assigneeId || req.actor.id;
+    const claim = await claimService.assignClaim(req.actor, req.params.id, targetAssigneeId);
     res.status(200).json({
       ok: true,
       data: claim,

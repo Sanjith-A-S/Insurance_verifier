@@ -1,0 +1,36 @@
+[
+  {
+    "id": "msg_001",
+    "claimId": "CL-2041",
+    "sender": { "id": "usr_meera", "name": "Meera Iyer", "role": "verifier" },
+    "body": "Welcome to ClaimLens. I have been assigned to your claim and will be reviewing your documents today.",
+    "kind": "message",
+    "requestId": null,
+    "attachments": [],
+    "createdAt": "2026-06-16T10:15:00Z",
+    "read": true
+  },
+  {
+    "id": "msg_002",
+    "claimId": "CL-2042",
+    "sender": { "id": "usr_meera", "name": "Meera Iyer", "role": "verifier" },
+    "body": "Hello Rohan, we are reviewing your damage photos and workshop estimate. We have sent a request regarding the photo timestamp and estimate breakdown.",
+    "kind": "request_notice",
+    "requestId": "req_2042_01",
+    "attachments": [],
+    "createdAt": "2026-10-15T09:45:00Z",
+    "read": false
+  },
+  {
+    "id": "msg_003",
+    "claimId": "CL-2043",
+    "sender": { "id": "usr_vikram", "name": "Vikram Shah", "role": "verifier" },
+    "body": "Priya, please upload your insurance policy certificate, RC copy, and the repair estimate from the service station so we can begin the assessment.",
+    "kind": "message",
+    "requestId": null,
+    "attachments": [],
+    "createdAt": "2026-10-21T11:15:00Z",
+    "read": false
+  }
+]
+

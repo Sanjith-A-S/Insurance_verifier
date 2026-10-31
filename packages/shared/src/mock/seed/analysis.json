@@ -1,0 +1,251 @@
+[
+  {
+    "claimId": "CL-2041",
+    "version": 1,
+    "createdAt": "2026-06-16T10:20:00Z",
+    "model": { "name": "gemini-3-flash-preview", "promptVersion": "analysis@1" },
+    "summary": "Consistent claim declaration matching policy terms and workshop parts estimate.",
+    "extractedFacts": [
+      { "label": "IDV Limit", "value": { "amount": 500000, "currency": "INR" }, "originType": "document_extraction", "factType": "sum_insured" },
+      { "label": "Compulsory Deductible", "value": { "amount": 1000, "currency": "INR" }, "originType": "document_extraction", "factType": "deductible" },
+      { "label": "Front Bumper Replacement", "value": { "amount": 35000, "currency": "INR" }, "originType": "document_extraction", "factType": "estimate_line_item" },
+      { "label": "Headlight Assembly (RH)", "value": { "amount": 13600, "currency": "INR" }, "originType": "document_extraction", "factType": "estimate_line_item" },
+      { "label": "Stated Total", "value": { "amount": 48600, "currency": "INR" }, "originType": "document_extraction", "factType": "estimate_total" }
+    ],
+    "regions": {},
+    "matrix": {
+      "columns": [
+        { "id": "claim_form", "label": "Claim Form" },
+        { "id": "policy_doc", "label": "Policy Schedule", "evidenceId": "EV-CL-2041-01" },
+        { "id": "estimate_doc", "label": "Workshop Estimate", "evidenceId": "EV-CL-2041-02" },
+        { "id": "front_photo", "label": "Front Photo", "evidenceId": "EV-CL-2041-03" }
+      ],
+      "rows": [
+        { "id": "row_date", "label": "Incident Date", "cells": { "claim_form": "agrees", "policy_doc": "agrees", "estimate_doc": "agrees", "front_photo": "agrees" } },
+        { "id": "row_location", "label": "Location", "cells": { "claim_form": "agrees", "policy_doc": "not_covered", "estimate_doc": "agrees", "front_photo": "unverified" } },
+        { "id": "row_damage", "label": "Damage Areas", "cells": { "claim_form": "agrees", "policy_doc": "not_covered", "estimate_doc": "agrees", "front_photo": "agrees" } },
+        { "id": "row_vehicle", "label": "Registration Number", "cells": { "claim_form": "agrees", "policy_doc": "agrees", "estimate_doc": "agrees", "front_photo": "agrees" } }
+      ]
+    },
+    "findings": [
+      {
+        "id": "F-2041-01",
+        "type": "coverage_observation",
+        "title": "Front Bumper & Headlamp Damage Supported by Estimate and Photos",
+        "category": "damage_assessment",
+        "priority": "low",
+        "status": "useful",
+        "observed": ["Damage visible on front bumper assembly and right headlight lens"],
+        "claimantAssertions": ["Front end collision while waiting at intersection"],
+        "documentFacts": ["Estimate lines reflect bumper replacement (₹35,000) and RH headlight (₹13,600)"],
+        "calculations": ["Parts total ₹48,600 is within IDV sublimit of ₹500,000"],
+        "aiInference": "Observed impact profile corresponds with stationary collision narrative.",
+        "alternatives": ["Secondary impact cannot be ruled out without paint transfer verification"],
+        "uncertainty": "Low",
+        "nextAction": "Proceed with standard settlement assessment",
+        "sources": [
+          { "evidenceId": "EV-CL-2041-02", "page": 1, "field": "estimate_total", "quote": "Total Estimated Amount: INR 48,600" },
+          { "evidenceId": "EV-CL-2041-03" }
+        ],
+        "lowEvidence": false
+      }
+    ],
+    "missingEvidence": [],
+    "policy": {
+      "clauses": [
+        { "id": "cl_od", "title": "Section 1: Loss of or Damage to the Vehicle Insured", "text": "The company will indemnify the insured against loss or damage to the vehicle insured and/or its accessories whilst thereon by accidental external means.", "relevant": true, "interpretation": "Direct physical impact to front vehicle structure is covered under Section 1." }
+      ],
+      "coverage": [
+        { "label": "Own Damage (Accidental External Means)", "covered": true, "evidenceId": "EV-CL-2041-01" },
+        { "label": "Compulsory Deductible Applied", "covered": true, "condition": "INR 1,000 applicable per event" }
+      ]
+    },
+    "settlement": {
+      "status": "calculated",
+      "currency": "INR",
+      "lines": [
+        { "label": "Total Itemised Repair Estimate", "value": 48600, "kind": "estimate_total", "source": "EV-CL-2041-02" },
+        { "label": "Policy Sum Insured Limit (IDV)", "value": 500000, "kind": "sublimit", "source": "EV-CL-2041-01" },
+        { "label": "Compulsory Deductible", "value": 1000, "kind": "deductible", "source": "EV-CL-2041-01" },
+        { "label": "Eligible Assessment Amount", "value": 48600, "kind": "eligible_amount" },
+        { "label": "Final Calculated Settlement", "value": 47600, "kind": "final_calculated" }
+      ],
+      "formula": "result = max(0, min(eligible, limit) - deductible)",
+      "assumptions": ["All itemised estimate lines treated as eligible under Section 1"],
+      "unresolved": [],
+      "resultAmount": 47600,
+      "overrides": [],
+      "calculatedAt": "2026-06-16T10:20:00Z"
+    }
+  },
+  {
+    "claimId": "CL-2042",
+    "version": 1,
+    "createdAt": "2026-10-15T09:30:00Z",
+    "model": { "name": "gemini-3-flash-preview", "promptVersion": "analysis@1" },
+    "summary": "Discrepancy identified between photo EXIF capture timestamp (2 Oct) and declared incident date (14 Oct). Workshop estimate arithmetic indicates a ₹2,900 variance between itemised sum and stated total. Duplicate photograph detected.",
+    "extractedFacts": [
+      { "label": "Declared Incident Date", "value": "2026-10-14", "originType": "claimant_assertion", "factType": "incident_date" },
+      { "label": "Photo EXIF Date", "value": "2026-10-02", "originType": "document_extraction", "factType": "exif_date" },
+      { "label": "Estimate Stated Total", "value": { "amount": 165200, "currency": "INR" }, "originType": "document_extraction", "factType": "estimate_total" }
+    ],
+    "regions": {},
+    "matrix": {
+      "columns": [
+        { "id": "claim_form", "label": "Claim Form" },
+        { "id": "damage_photo", "label": "Damage Photo", "evidenceId": "EV-CL-2042-01" },
+        { "id": "estimate_doc", "label": "Repair Estimate", "evidenceId": "EV-CL-2042-02" }
+      ],
+      "rows": [
+        { "id": "row_date", "label": "Incident Date", "cells": { "claim_form": "agrees", "damage_photo": "disagrees", "estimate_doc": "disagrees" } },
+        { "id": "row_arithmetic", "label": "Estimate Arithmetic", "cells": { "claim_form": "unverified", "damage_photo": "not_covered", "estimate_doc": "disagrees" } }
+      ]
+    },
+    "findings": [
+      {
+        "id": "F-2042-01",
+        "type": "inconsistency",
+        "title": "Photo Metadata Timestamp Precedes Declared Incident Date by 12 Days",
+        "category": "timeline",
+        "priority": "high",
+        "status": "open",
+        "observed": ["EXIF metadata of rear_bumper_damage.jpg records DateTimeOriginal as 2026-10-02 11:20:00"],
+        "claimantAssertions": ["Incident occurred on 2026-10-14 at 11:00 am"],
+        "documentFacts": ["Garage estimate dated 2026-10-11, which also precedes the declared incident date"],
+        "calculations": ["Difference of 12 days between camera timestamp and claim narrative date"],
+        "aiInference": "Device clock may have been misconfigured, or photograph depicts prior existing damage.",
+        "alternatives": ["Camera device clock was incorrect", "Claimant entered incorrect date on initial submission form"],
+        "uncertainty": "Medium",
+        "nextAction": "Request clarification from claimant regarding camera date setting and repair timeline",
+        "sources": [
+          { "evidenceId": "EV-CL-2042-01", "field": "provenance.metadata.dateTaken" },
+          { "evidenceId": "EV-CL-2042-02", "page": 1, "field": "estimate_date" }
+        ],
+        "lowEvidence": false
+      },
+      {
+        "id": "F-2042-02",
+        "type": "calculation_check",
+        "title": "Estimate Line Items Sum (₹162,300) Differs from Stated Total (₹165,200)",
+        "category": "financial",
+        "priority": "medium",
+        "status": "open",
+        "observed": ["Sum of 4 individual parts line items equals ₹162,300; invoice grand total is ₹165,200"],
+        "claimantAssertions": ["Total claim estimate submitted as ₹165,200"],
+        "documentFacts": ["Unaccounted difference of ₹2,900 on workshop document"],
+        "calculations": ["₹165,200 - ₹162,300 = ₹2,900 discrepancy"],
+        "aiInference": "Document may omit a consumable or tax line item, or contains a clerical addition error.",
+        "alternatives": ["Clerical addition error by repair shop", "Missing consumable line in bill breakdown"],
+        "uncertainty": "Low",
+        "nextAction": "Request revised or itemised tax invoice from authorised workshop",
+        "sources": [
+          { "evidenceId": "EV-CL-2042-02", "page": 1, "field": "estimate_total" }
+        ],
+        "lowEvidence": false
+      },
+      {
+        "id": "F-2042-03",
+        "type": "low_evidence_hypothesis",
+        "title": "Unverified Pre-existing Damage Pattern on Rear Quarter Panel",
+        "category": "damage_assessment",
+        "priority": "low",
+        "status": "open",
+        "observed": ["Oxidation visible near panel lip in photo EV-CL-2042-01"],
+        "claimantAssertions": ["All damage resulted from single collision"],
+        "documentFacts": [],
+        "calculations": [],
+        "aiInference": "Surface rust indicates potential age older than 24 hours.",
+        "alternatives": ["Road grime residue mistaken for oxidation in photo resolution"],
+        "uncertainty": "High",
+        "nextAction": "Physical inspection recommended by qualified surveyor",
+        "sources": [],
+        "lowEvidence": true
+      }
+    ],
+    "missingEvidence": [],
+    "policy": {
+      "clauses": [
+        { "id": "cl_od", "title": "Standard Own Damage Policy Clause", "text": "Cover limited to accidental external damage sustained during the period of insurance.", "relevant": true }
+      ],
+      "coverage": []
+    },
+    "settlement": {
+      "status": "withheld",
+      "currency": "INR",
+      "lines": [],
+      "formula": "Settlement calculation suspended pending resolution of date inconsistencies and estimate arithmetic",
+      "assumptions": [],
+      "unresolved": [
+        { "id": "u1", "message": "Discrepancy between photo date (2 Oct) and declared date (14 Oct)", "suggestedRequestTitle": "Clarification on incident date and photo timeline" },
+        { "id": "u2", "message": "Workshop estimate arithmetic discrepancy of ₹2,900", "suggestedRequestTitle": "Itemised workshop invoice breakdown" }
+      ],
+      "resultAmount": null,
+      "overrides": [],
+      "calculatedAt": "2026-10-15T09:30:00Z"
+    }
+  },
+  {
+    "claimId": "CL-2044",
+    "version": 1,
+    "createdAt": "2026-10-17T07:00:00Z",
+    "model": { "name": "gemini-3-flash-preview", "promptVersion": "analysis@1" },
+    "summary": "Incident time declared as approximately midnight on 15 Oct. Policy schedule records expiry at 23:59 hrs on 15 Oct 2026. Consumables clause references an endorsement schedule not present in submitted documents.",
+    "extractedFacts": [
+      { "label": "Policy Expiry", "value": "2026-10-15 23:59:59", "originType": "document_extraction", "factType": "policy_period_end" },
+      { "label": "Declared Incident Time", "value": "2026-10-16 00:00 (approx)", "originType": "claimant_assertion", "factType": "incident_time" }
+    ],
+    "regions": {},
+    "matrix": {
+      "columns": [
+        { "id": "claim_form", "label": "Claim Form" },
+        { "id": "policy_doc", "label": "Policy Schedule" }
+      ],
+      "rows": [
+        { "id": "row_temporal", "label": "Policy Validity at Occurrence", "cells": { "claim_form": "unverified", "policy_doc": "disagrees" } }
+      ]
+    },
+    "findings": [
+      {
+        "id": "F-2044-01",
+        "type": "policy_exclusion",
+        "title": "Incident Declared on Policy Expiration Boundary (Midnight 15/16 Oct)",
+        "category": "policy_coverage",
+        "priority": "high",
+        "status": "open",
+        "observed": ["Claim form indicates time was 'around midnight' on the transition from 15 to 16 Oct"],
+        "claimantAssertions": ["Sideswipe occurred around midnight while travelling along NICE Road"],
+        "documentFacts": ["Policy schedule expired 15-Oct-2026 at 23:59 hrs IST"],
+        "calculations": ["Incident occurrence falls within 15-minute margin of policy expiration cutoff"],
+        "aiInference": "Exact timing determines whether incident falls within active coverage window.",
+        "alternatives": ["Toll plaza timestamp or FASTag log can establish precise vehicle location and timing"],
+        "uncertainty": "High",
+        "nextAction": "Request FASTag or toll plaza transit records for NICE Road junction",
+        "sources": [
+          { "evidenceId": "EV-CL-2044-01", "field": "policy_period_end" }
+        ],
+        "lowEvidence": false
+      }
+    ],
+    "missingEvidence": [],
+    "policy": {
+      "clauses": [
+        { "id": "cl_term", "title": "Period of Insurance Expiry Clause", "text": "Insurance ceases at 23:59 hrs on the date specified in the schedule.", "relevant": true }
+      ],
+      "coverage": []
+    },
+    "settlement": {
+      "status": "withheld",
+      "currency": "INR",
+      "lines": [],
+      "formula": "Settlement withheld due to unverified policy validity period at time of loss",
+      "assumptions": [],
+      "unresolved": [
+        { "id": "u1", "message": "Verification of exact incident timing relative to policy expiry at 23:59 hrs", "suggestedRequestTitle": "Toll plaza receipt or FASTag transit statement" }
+      ],
+      "resultAmount": null,
+      "overrides": [],
+      "calculatedAt": "2026-10-17T07:00:00Z"
+    }
+  }
+]
+
