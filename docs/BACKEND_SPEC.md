@@ -357,3 +357,4 @@ Cut order (cut from the top first): matrix annotations → regions/bounding boxe
 
 ## 18. Changes from v1
 Base path `/api/v1`; envelope `{ok,…}`; 422 `UPLOAD_REJECTED` (not 413/415); `X-Demo-User-Id`; Bearer not cookie; no admin role; claim status vocabulary `new/completed`; string ids `CL-####`/`EV-…`; `timeline_events` replaces activity; `private_notes` collection replaces message visibility flag; Settlement uses `withheld`, `lines`, `unresolved`, parameter-less recalculation and an override record; findings/analysis follow the frontend `Analysis` shape; matrix and regions added; seed replaced by CL-2041…2051; dev console removed in favour of the real apps plus `scripts/smoke.mjs`; fact-verify and cross-claim duplicate detection dropped; recommendation fields per handoff.
+

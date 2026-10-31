@@ -35,3 +35,4 @@ export const singleFileUpload = (req, res, next) => {
     next();
   });
 };
+

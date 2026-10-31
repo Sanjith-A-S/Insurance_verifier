@@ -8,3 +8,4 @@ router.use(resolveIdentity);
 router.get('/timeline', controller.getTimeline);
 
 export default router;
+

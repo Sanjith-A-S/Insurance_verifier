@@ -54,3 +54,4 @@ extractedFactSchema.index({ claimId: 1, analysisVersion: 1 });
 extractedFactSchema.index({ evidenceId: 1, sha256: 1, promptVersion: 1 });
 
 export const ExtractedFact = mongoose.model('ExtractedFact', extractedFactSchema);
+

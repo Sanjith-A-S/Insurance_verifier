@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "seed": "node seed/loader.js",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "verify": "node scripts/verify_system.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.32.0",

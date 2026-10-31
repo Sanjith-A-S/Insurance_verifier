@@ -11,3 +11,4 @@ export async function getDashboard(req, res, next) {
     next(err);
   }
 }
+

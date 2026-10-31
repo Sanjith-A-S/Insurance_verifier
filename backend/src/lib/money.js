@@ -12,3 +12,4 @@ export function formatRupees(amount) {
   const num = typeof amount === 'number' ? amount : 0;
   return Number(num.toFixed(2));
 }
+

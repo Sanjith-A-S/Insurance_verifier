@@ -31,3 +31,4 @@ describe('Health and Envelope Tests', () => {
     expect(res.body.error.code).toBe('VALIDATION_ERROR');
   });
 });
+

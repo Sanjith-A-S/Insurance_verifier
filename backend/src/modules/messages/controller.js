@@ -35,3 +35,4 @@ export async function markRead(req, res, next) {
     next(err);
   }
 }
+

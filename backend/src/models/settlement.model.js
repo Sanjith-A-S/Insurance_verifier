@@ -84,3 +84,4 @@ const settlementOverrideSchema = new mongoose.Schema(
 settlementOverrideSchema.index({ claimId: 1, at: -1 });
 
 export const SettlementOverride = mongoose.model('SettlementOverride', settlementOverrideSchema);
+

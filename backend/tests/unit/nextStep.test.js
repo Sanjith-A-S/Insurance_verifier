@@ -47,3 +47,4 @@ describe('deriveNextStep', () => {
     expect(res.nextStep.label).toBe('Review findings');
   });
 });
+

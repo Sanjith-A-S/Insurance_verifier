@@ -117,3 +117,4 @@ export async function callGeminiStructured({
   logger.error({ err: lastError?.message }, 'All Gemini API attempts failed');
   throw new AnalysisUnavailableError(`Gemini call failed after retries: ${lastError?.message}`);
 }
+

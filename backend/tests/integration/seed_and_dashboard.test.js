@@ -55,3 +55,4 @@ describe('Seed & Dashboard Contract Test (Phase 3)', () => {
     expect(res.body.data.submittedClaims).toBe(10);
   });
 });
+

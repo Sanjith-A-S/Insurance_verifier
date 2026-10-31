@@ -114,3 +114,4 @@ export function serializeClaimDetail(claim, role, context = {}) {
 
   return full;
 }
+

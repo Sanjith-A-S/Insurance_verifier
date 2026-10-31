@@ -31,3 +31,4 @@ class LogRingBuffer {
 }
 
 export const logRing = new LogRingBuffer();
+

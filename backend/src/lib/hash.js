@@ -56,3 +56,4 @@ export function hammingDistance(hex1, hex2) {
   }
   return dist;
 }
+

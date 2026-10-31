@@ -136,3 +136,4 @@ describe('Settlement Rules (Deterministic Loss Calculation)', () => {
     expect(res.resultAmount).toBe(47600);
   });
 });
+

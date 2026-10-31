@@ -647,3 +647,4 @@ if (process.argv[1]?.endsWith('loader.js')) {
       process.exit(1);
     });
 }
+

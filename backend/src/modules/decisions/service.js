@@ -118,3 +118,4 @@ export async function recordDecision(actor, claimId, { decision, rationale = '',
     at: decisionDoc.at,
   };
 }
+

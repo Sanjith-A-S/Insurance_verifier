@@ -76,3 +76,4 @@ describe('No-Leak Security Test (Spec §15.3)', () => {
     recursiveScanForLeaks(noteRes.body, '/private-notes-attempt');
   });
 });
+

@@ -7,7 +7,8 @@ let isConnected = false;
 export async function connectDB(customUri) {
   const uri = customUri || env.MONGODB_URI;
 
-  if (isConnected && mongoose.connection.readyState === 1) {
+  if (mongoose.connection.readyState === 1) {
+    isConnected = true;
     return mongoose.connection;
   }
 
@@ -32,3 +33,4 @@ export async function disconnectDB() {
     logger.info('Disconnected from MongoDB');
   }
 }
+

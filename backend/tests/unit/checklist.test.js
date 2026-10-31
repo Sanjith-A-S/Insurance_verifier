@@ -58,3 +58,4 @@ describe('Checklist Rules', () => {
     expect(missingEvidenceCount).toBe(1);
   });
 });
+

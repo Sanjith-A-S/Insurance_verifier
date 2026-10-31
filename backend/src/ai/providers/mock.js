@@ -109,3 +109,4 @@ export function getMockComparisonOutput(claim, facts, ruleFindings) {
     missingEvidenceSuggestions: [],
   };
 }
+

@@ -9,3 +9,4 @@ router.post('/register', validate(registerSchema), controller.register);
 router.post('/login', validate(loginSchema), controller.login);
 
 export default router;
+

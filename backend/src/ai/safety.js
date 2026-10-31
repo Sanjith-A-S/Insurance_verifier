@@ -129,3 +129,4 @@ export function validateAndSanitizeFindings(findings = [], context = {}) {
 
   return { findings: sanitizedFindings, warnings };
 }
+

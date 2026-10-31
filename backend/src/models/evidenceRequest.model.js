@@ -69,3 +69,4 @@ const evidenceRequestSchema = new mongoose.Schema(
 evidenceRequestSchema.index({ claimId: 1, status: 1 });
 
 export const EvidenceRequest = mongoose.model('EvidenceRequest', evidenceRequestSchema);
+

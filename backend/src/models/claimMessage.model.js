@@ -34,3 +34,4 @@ const claimMessageSchema = new mongoose.Schema(
 claimMessageSchema.index({ claimId: 1, createdAt: 1 });
 
 export const ClaimMessage = mongoose.model('ClaimMessage', claimMessageSchema);
+

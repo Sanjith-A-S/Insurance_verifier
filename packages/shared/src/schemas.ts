@@ -324,3 +324,4 @@ export const DashboardDataSchema = z.object({
   recentActivity: z.array(z.any()),
   nextUp: z.array(ClaimSummarySchema),
 });
+

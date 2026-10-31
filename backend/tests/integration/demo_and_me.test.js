@@ -58,3 +58,4 @@ describe('Demo & /me Module Tests', () => {
     expect(badRes.body.error.code).toBe('VALIDATION_ERROR');
   });
 });
+

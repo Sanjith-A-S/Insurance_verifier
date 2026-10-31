@@ -28,3 +28,4 @@ const matrixAnnotationSchema = new mongoose.Schema(
 matrixAnnotationSchema.index({ claimId: 1, analysisVersion: 1, rowId: 1 });
 
 export const MatrixAnnotation = mongoose.model('MatrixAnnotation', matrixAnnotationSchema);
+

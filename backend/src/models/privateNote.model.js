@@ -25,3 +25,4 @@ const privateNoteSchema = new mongoose.Schema(
 privateNoteSchema.index({ claimId: 1, createdAt: -1 });
 
 export const PrivateNote = mongoose.model('PrivateNote', privateNoteSchema);
+

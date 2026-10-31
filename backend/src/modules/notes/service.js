@@ -58,3 +58,4 @@ export async function createPrivateNote(actor, claimId, { body }) {
     createdAt: note.createdAt,
   };
 }
+

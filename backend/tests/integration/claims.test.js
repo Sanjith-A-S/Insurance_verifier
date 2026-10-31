@@ -156,3 +156,4 @@ describe('Claims & Authorization Flow', () => {
     expect(verifierDash.body.data.totals.in_review).toBe(1);
   });
 });
+

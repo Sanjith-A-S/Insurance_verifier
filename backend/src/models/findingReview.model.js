@@ -33,3 +33,4 @@ const findingReviewSchema = new mongoose.Schema(
 findingReviewSchema.index({ claimId: 1, analysisVersion: 1, findingId: 1 });
 
 export const FindingReview = mongoose.model('FindingReview', findingReviewSchema);
+

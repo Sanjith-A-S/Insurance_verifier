@@ -212,3 +212,4 @@ export async function annotateMatrixRow(actor, claimId, { rowId, text }) {
 
   return annotation;
 }
+

@@ -10,3 +10,4 @@ router.post('/messages', controller.sendMessage);
 router.post('/messages/read', controller.markRead);
 
 export default router;
+

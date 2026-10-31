@@ -154,3 +154,4 @@ export function buildEvidenceMatrix(claim, extractedFacts = [], evidenceFiles = 
 
   return { columns, rows };
 }
+

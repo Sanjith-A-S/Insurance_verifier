@@ -25,3 +25,4 @@ This document captures key frontend contracts, conventions, schemas, and endpoin
 - Verifiers can access non-draft claims that are unassigned or assigned to them (`assigneeId === actor.id || !assigneeId`).
 - Private notes are verifier-only; claimants get 403 on `/private-notes`.
 - Findings, matrix, settlement calculations, policy interpretations, internal decisions, and verifier assumptions are strictly stripped from claimant responses.
+

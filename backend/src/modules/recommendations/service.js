@@ -152,3 +152,4 @@ export async function requestRecommendationAsClaimant(actor, claimId) {
 
   return getRecommendation(actor, claimId);
 }
+

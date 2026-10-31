@@ -225,3 +225,4 @@ export async function generateThumbnail(storageKey) {
     .jpeg({ quality: 80 })
     .toBuffer();
 }
+

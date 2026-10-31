@@ -335,3 +335,4 @@ async function checkLastOpenRequestAndRevertStatus(claim, actor) {
     });
   }
 }
+

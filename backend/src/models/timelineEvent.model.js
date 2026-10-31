@@ -35,3 +35,4 @@ timelineEventSchema.index({ claimId: 1, at: -1 });
 timelineEventSchema.index({ claimId: 1, visibility: 1, at: -1 });
 
 export const TimelineEvent = mongoose.model('TimelineEvent', timelineEventSchema);
+

@@ -57,3 +57,4 @@ const recommendationSchema = new mongoose.Schema(
 recommendationSchema.index({ claimId: 1, createdAt: -1 });
 
 export const Recommendation = mongoose.model('Recommendation', recommendationSchema);
+

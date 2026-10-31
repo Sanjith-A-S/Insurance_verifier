@@ -10,3 +10,4 @@ router.use(requireRole('verifier'));
 router.get('/dashboard', controller.getDashboard);
 
 export default router;
+

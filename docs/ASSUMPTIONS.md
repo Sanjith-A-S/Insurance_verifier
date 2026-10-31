@@ -8,3 +8,4 @@ This document records architectural, dependency, and contract assumptions made d
 4. Default MongoDB database name used is `claimlens` unless overridden by connection string URI.
 5. In role projections for claimants, `reviewStatus` defaults to `"pending"` and `provenance.statuses` includes only safe public statuses (`["metadata_present"]` or `["capture_workflow_recorded"]`).
 6. HEIC uploads are accepted and original bytes preserved, with derivatives omitted when sharp HEIC decode is unavailable on Windows.
+

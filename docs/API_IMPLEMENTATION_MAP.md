@@ -81,3 +81,4 @@ Envelope: `{ok:true,data,meta?}` / `{ok:false,error:{code,message,fields?}}`. Li
 4. Request validated by Zod; errors mapped to dotted `fields`.
 5. Response built by a role serializer and (in tests) parsed by the shared zod schema.
 6. A timeline event is written for every state change, with the correct visibility.
+

@@ -74,3 +74,4 @@ export async function createSyntheticDemoPdf(title = 'SYNTHETIC DEMO DOCUMENT', 
 
   return { buffer, sha256, mimeType: 'application/pdf', ext: 'pdf' };
 }
+

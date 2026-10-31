@@ -26,3 +26,4 @@ const captureSessionSchema = new mongoose.Schema(
 );
 
 export const CaptureSession = mongoose.model('CaptureSession', captureSessionSchema);
+

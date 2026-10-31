@@ -39,3 +39,4 @@ const decisionSchema = new mongoose.Schema(
 decisionSchema.index({ claimId: 1, at: -1 });
 
 export const Decision = mongoose.model('Decision', decisionSchema);
+

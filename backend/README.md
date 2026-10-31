@@ -40,12 +40,22 @@ npm run dev
 
 ### 5. Run Test Suite & Smoke Verification
 ```bash
-# Run Vitest unit, integration, and shared schema contract tests
+# Run Vitest unit, integration, and shared schema contract tests (85 passing tests)
 npm test
+
+# Run Deep AI Engine & Database Health Verification Tool
+npm run verify
 
 # Run End-to-end HTTP Smoke Verification
 npm run smoke
 ```
+
+### 6. MongoDB Atlas Connection Note
+If connecting to MongoDB Atlas (`mongodb+srv://...`):
+- Make sure your public IP address is whitelisted in MongoDB Atlas:
+  1. Open [cloud.mongodb.com](https://cloud.mongodb.com) -> Security -> **Network Access**.
+  2. Click **Add IP Address** -> select **Allow Access from Anywhere** (`0.0.0.0/0`) or add your current IP (`61.1.180.245`).
+- The backend and test scripts include automatic fallback to in-memory MongoDB (`mongodb-memory-server`) during local development and testing if Atlas is temporarily unreachable or unwhitelisted.
 
 ---
 
@@ -81,3 +91,4 @@ Send the demo header `X-Demo-User-Id` on requests:
 3. **Role-Based Isolation**: Private notes live in a separate collection and return `403 FORBIDDEN` to claimants. Claimants are never served internal findings, calculations, or verifier assumptions.
 4. **Original File Integrity**: File bytes are hashed (SHA-256) server-side upon upload and stored untouched on disk.
 5. **Contract Conformance**: API responses are validated against `@claimlens/shared` schemas using Zod.
+

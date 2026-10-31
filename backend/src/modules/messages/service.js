@@ -107,3 +107,4 @@ export async function markMessagesAsRead(actor, claimId) {
 
   return { ok: true };
 }
+

@@ -69,3 +69,4 @@ const analysisSchema = new mongoose.Schema(
 analysisSchema.index({ claimId: 1, version: 1 }, { unique: true });
 
 export const Analysis = mongoose.model('Analysis', analysisSchema);
+

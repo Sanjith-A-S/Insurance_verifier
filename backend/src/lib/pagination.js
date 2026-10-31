@@ -14,3 +14,4 @@ export function formatPaginationMeta(page, pageSize, total) {
     total,
   };
 }
+

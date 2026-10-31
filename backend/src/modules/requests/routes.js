@@ -12,3 +12,4 @@ router.patch('/requests/:rid', controller.patchRequest);
 router.post('/requests/:rid/responses', controller.submitResponse);
 
 export default router;
+

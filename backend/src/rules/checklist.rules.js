@@ -197,3 +197,4 @@ export function computeChecklistProgress(checklist = []) {
     missingEvidenceCount: missingRequiredItems.length,
   };
 }
+

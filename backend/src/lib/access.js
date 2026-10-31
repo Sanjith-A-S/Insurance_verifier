@@ -95,3 +95,4 @@ export async function autoAssignAndTransitionVerifierWrite(claim, actor) {
     await claim.save();
   }
 }
+

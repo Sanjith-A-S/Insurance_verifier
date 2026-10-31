@@ -1,4 +1,25 @@
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { z } from 'zod';
+
+// Load .env automatically in Node 20+ if not already loaded
+if (typeof process.loadEnvFile === 'function') {
+  const envCandidates = [
+    resolve(process.cwd(), '.env'),
+    resolve(process.cwd(), 'backend/.env'),
+    resolve(new URL('.', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'), '../../.env')
+  ];
+  for (const candidate of envCandidates) {
+    if (existsSync(candidate)) {
+      try {
+        process.loadEnvFile(candidate);
+        break;
+      } catch {
+        // continue
+      }
+    }
+  }
+}
 
 const envSchema = z.object({
   PORT: z.coerce.number().default(4000),

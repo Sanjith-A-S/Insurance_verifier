@@ -76,3 +76,4 @@ evidenceFileSchema.index({ claimId: 1, receivedAt: -1 });
 evidenceFileSchema.index({ claimId: 1, sha256: 1 });
 
 export const EvidenceFile = mongoose.model('EvidenceFile', evidenceFileSchema);
+
