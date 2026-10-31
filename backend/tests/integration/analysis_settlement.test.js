@@ -63,13 +63,15 @@ describe('Analysis & Settlement Flow (Stream B)', () => {
     expect(triggerRes.body.data.analysisId).toBeDefined();
     expect(triggerRes.body.data.version).toBe(1);
 
-    // Wait a tick for async execution
-    await new Promise((r) => setTimeout(r, 200));
-
-    // Poll status
-    const statusRes = await request(app)
-      .get(`/api/v1/claims/${claimId}/analysis/status`)
-      .set('X-Demo-User-Id', 'usr_meera');
+    // Poll status until ready
+    let statusRes;
+    for (let i = 0; i < 20; i++) {
+      statusRes = await request(app)
+        .get(`/api/v1/claims/${claimId}/analysis/status`)
+        .set('X-Demo-User-Id', 'usr_meera');
+      if (statusRes.body.data?.state === 'ready') break;
+      await new Promise((r) => setTimeout(r, 100));
+    }
 
     expect(statusRes.status).toBe(200);
     expect(statusRes.body.data.state).toBe('ready');
